@@ -228,6 +228,7 @@ def parse_pedestrian(fxml, fpos_GT, fpos_pred='', fpose=''):
 
 
 def prepare_data():
+  
   # object GT directory
   obj_root = '/sailhome/ajarno/STR-PIP/datasets/JAAD_instance_segm'
   fobj_dir_format = os.path.join(obj_root, 'video_{:04d}')
