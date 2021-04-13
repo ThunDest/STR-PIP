@@ -11,10 +11,10 @@ def build(is_train):
 
   print("Point 1.1")
   opt, log = args.TrainArgs().parse() if is_train else args.TestArgs().parse()
-
+  print("Point 1.2")
   if not is_train:
 
-    print("Point 1.2")
+    print("Point 1.3")
     print('Options:')
     opt_dict = vars(opt)
     for key in sorted(opt_dict):
