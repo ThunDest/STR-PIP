@@ -123,6 +123,7 @@ class BaseArgs:
 
 
   def parse(self):
+    print("I AM HERE")
     opt, _ = self.parser.parse_known_args()
     print("I AM HERE")
     opt.is_train, opt.split = self.is_train, self.split
