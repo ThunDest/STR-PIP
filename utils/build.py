@@ -10,11 +10,13 @@ from .logger import Logger
 def build(is_train):
 
   print("Point 1.1")
-  opt, log = args.TrainArgs().parse() if is_train else args.TestArgs().parse()
+  print(args.TrainArgs().parse() if is_train else args.TestArgs().parse())
   print("Point 1.2")
+  opt, log = args.TrainArgs().parse() if is_train else args.TestArgs().parse()
+  print("Point 1.3")
   if not is_train:
 
-    print("Point 1.3")
+    print("Point 1.4")
     print('Options:')
     opt_dict = vars(opt)
     for key in sorted(opt_dict):
