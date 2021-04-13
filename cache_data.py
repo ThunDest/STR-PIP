@@ -124,7 +124,9 @@ def merge_and_flat(vrange):
         'obj_bbox': merged_bbox,
       }
       pickle.dump(dout, handle)
+    print(len(fpkls))
     print('avg time: ', (time.time()-t_start) / len(fpkls))
+
 
 if __name__ == '__main__':
   # cache_masks()
