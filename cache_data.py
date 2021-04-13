@@ -36,7 +36,6 @@ def add_obj_bbox():
   dir_vids = sorted(glob(os.path.join(fnpy_root, 'vid*')))
 
   def helper(vid_range, split):
-    print('In Helper', '\nvid_range:',vid_range, '\nlen(vid_range):', len(vid_range), '\n')
     for dir_vid in vid_range:
       print(dir_vid)
       sys.stdout.flush()
@@ -98,7 +97,6 @@ def merge_and_flat(vrange):
   pkl_out_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/cache/obj_bbox_merged'
   os.makedirs(pkl_out_root, exist_ok=True)
   # for vid in range(1, 347):
-  print('vrange:', len(vrange))
   for vid in vrange:
     fpkls = sorted(glob(os.path.join(pkl_in_root, 'vid{:08d}*pkl'.format(vid))))
     print(vid, len(fpkls))
