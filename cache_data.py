@@ -97,6 +97,7 @@ def merge_and_flat(vrange):
   pkl_out_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/cache/obj_bbox_merged'
   os.makedirs(pkl_out_root, exist_ok=True)
   # for vid in range(1, 347):
+  print('vrange:',len(vrange) )
   for vid in vrange:
     fpkls = sorted(glob(os.path.join(pkl_in_root, 'vid{:08d}*pkl'.format(vid))))
     print(vid, len(fpkls))
@@ -124,7 +125,6 @@ def merge_and_flat(vrange):
         'obj_bbox': merged_bbox,
       }
       pickle.dump(dout, handle)
-    print(len(fpkls))
     print('avg time: ', (time.time()-t_start) / len(fpkls))
 
 
