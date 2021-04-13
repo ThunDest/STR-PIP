@@ -24,19 +24,19 @@ def cache_masks():
 
 
 def cache_crops():
-  fnpy_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/JAAD_instance_segm'
+  fnpy_root = '/home/Datasets/MLDatasetsStorage/JAAD/images'
   fpkl_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/cache/JAAD_instance_crops'
   utils.get_obj_crops(fnpy_root, fpkl_root)
 
 def add_obj_bbox():
-  fnpy_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/JAAD_instance_segm'
+  fnpy_root = '/home/Datasets/MLDatasetsStorage/JAAD/images'
   # fpkl_root = '/sailhome/bingbin/STR-PIP/datasets/cache/jaad_collapse'
   fobj_root = '/home/aren/repos/STR-PIP/STR-PIP/datasets/cache/obj_bbox'
   os.makedirs(fobj_root, exist_ok=True)
   dir_vids = sorted(glob(os.path.join(fnpy_root, 'vid*')))
 
   def helper(vid_range, split):
-    print('In Helper', '\nvid_range:',vid_range, '\nlen(vid_range)', len(vid_range))
+    print('In Helper', '\nvid_range:',vid_range, '\nlen(vid_range):', len(vid_range), '\n')
     for dir_vid in vid_range:
       print(dir_vid)
       sys.stdout.flush()
