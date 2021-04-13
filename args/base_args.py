@@ -75,7 +75,8 @@ class BaseArgs:
     # data
     self.parser.add_argument('--view', type=str, default='center', choices=['center', 'all', 'left', 'right'],
                              help='Choose to use only the center view ("center"), or also the side views ("all")')
-    self.parser.add_argument('--split', type=str, required=True)
+    self.parser.add_argument('--split', type=str, required=True,
+                             help='Split the dataset')
     self.parser.add_argument('--dset-name', type=str, default='JAAD')
     self.parser.add_argument('--annot-ped-format', type=str,
                              # default='/sailhome/bingbin/STR-PIP/datasets/annot_{}_ped.pkl',
@@ -135,6 +136,12 @@ class BaseArgs:
         model_name = opt.model
       if opt.use_gru:
         model_name += '_gru'
+      print('{:s}_seq{}{}_lr{:.01e}_wd{:.01e}_bt{:d}_pos{}_{:s}'.format(
+                  model_name, opt.seq_len,
+                  '_pred{}'.format(opt.pred_seq_len) if opt.predict else '',
+                  opt.lr_init, opt.wd, opt.batch_size,
+                  opt.pos_mode[0].upper()+opt.pos_mode[1:],
+                  opt.ckpt_name))
       ckpt_name = '{:s}_seq{}{}_lr{:.01e}_wd{:.01e}_bt{:d}_pos{}_{:s}'.format(
                   model_name, opt.seq_len,
                   '_pred{}'.format(opt.pred_seq_len) if opt.predict else '',
