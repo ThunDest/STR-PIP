@@ -137,12 +137,7 @@ class BaseArgs:
       if opt.use_gru:
         model_name += '_gru'
       print("test1")
-      print('{:s}_seq{}{}_lr{:.01e}_wd{:.01e}_bt{:d}_pos{}_{:s}'.format(
-                  model_name, opt.seq_len,
-                  '_pred{}'.format(opt.pred_seq_len) if opt.predict else '',
-                  opt.lr_init, opt.wd, opt.batch_size,
-                  opt.pos_mode[0].upper()+opt.pos_mode[1:],
-                  opt.ckpt_name))
+      print(opt.ckpt_name)
       print("test2")
       ckpt_name = '{:s}_seq{}{}_lr{:.01e}_wd{:.01e}_bt{:d}_pos{}_{:s}'.format(
                   model_name, opt.seq_len,
