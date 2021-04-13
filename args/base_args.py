@@ -125,8 +125,8 @@ class BaseArgs:
   def parse(self):
     print("I AM HERE")
     opt, _ = self.parser.parse_known_args()
-    print("I AM HERE")
-    opt.is_train, opt.split = self.is_train, self.split
+    print("I AM HERE NOW")
+    # opt.is_train, opt.split = self.is_train, self.split
     opt.is_train = self.is_train
     if opt.is_train:
       if opt.model == 'ConcatModel':
