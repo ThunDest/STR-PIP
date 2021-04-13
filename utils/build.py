@@ -10,7 +10,6 @@ from .logger import Logger
 def build(is_train):
 
   print("Point 1.1")
-  print("test")
   print(is_train)
   print(args.TrainArgs().parse() if is_train else args.TestArgs())
   print("Point 1.2")
