@@ -36,7 +36,7 @@ def add_obj_bbox():
   dir_vids = sorted(glob(os.path.join(fnpy_root, 'vid*')))
 
   def helper(vid_range, split):
-    print('In Helper')
+    print('In Helper', '\nvid_range:',vid_range, '\nlen(vid_range)', len(vid_range))
     for dir_vid in vid_range:
       print(dir_vid)
       sys.stdout.flush()
