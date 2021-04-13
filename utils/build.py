@@ -8,9 +8,13 @@ from .logger import Logger
 
 
 def build(is_train):
+
+  print("Point 1.1")
   opt, log = args.TrainArgs().parse() if is_train else args.TestArgs().parse()
 
   if not is_train:
+
+    print("Point 1.2")
     print('Options:')
     opt_dict = vars(opt)
     for key in sorted(opt_dict):
