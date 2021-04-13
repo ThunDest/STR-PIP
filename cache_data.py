@@ -16,10 +16,12 @@ import pdb
 
 
 def cache_masks():
+  print("Point 1")
   opt, logger = utils.build(is_train=False)
   opt.combine_method = ''
   opt.split = 'train'
   cache_dir_name = 'jaad_collapse{}'.format('_'+opt.combine_method if opt.combine_method else '')
+  print("Point 2")
   data.cache_all_objs(opt, cache_dir_name)
 
 
